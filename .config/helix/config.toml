@@ -1,0 +1,8 @@
+theme = "catppuccin_mocha"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+true-color = true
+cursor-shape.insert = "bar"
+auto-pairs = false
