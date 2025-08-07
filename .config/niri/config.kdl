@@ -1,0 +1,102 @@
+input {
+    keyboard {
+        xkb {
+            options "lv5:caps_switch,compose:ralt"
+        }
+    }
+    touchpad {
+        natural-scroll
+    }
+    focus-follows-mouse
+}
+
+
+layout {
+    gaps 8
+    center-focused-column "on-overflow"
+}
+
+binds {
+    Mod+Space { spawn "yofi"; }
+    Mod+T { spawn "kitty"; }
+    Mod+N { spawn "swaync-client" "-t"; }
+    Super+Alt+L { spawn "swaylock"; }
+
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    XF86Display                                  { power-off-monitors; }
+
+    Mod+Q { close-window; }
+
+    // Focus
+    Mod+C { center-column; }
+
+    Mod+H    { focus-column-left; }
+    Mod+J    { focus-window-down; }
+    Mod+K    { focus-window-up; }
+    Mod+L    { focus-column-right; }
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+
+    Mod+U { focus-workspace-down; }
+    Mod+I { focus-workspace-up; }
+
+    // Move
+    Mod+ISO_Level5_Shift+H    { move-column-left; }
+    Mod+ISO_Level5_Shift+J    { move-window-down; }
+    Mod+ISO_Level5_Shift+K    { move-window-up; }
+    Mod+ISO_Level5_Shift+L    { move-column-right; }
+    Mod+ISO_Level5_Shift+Home { move-column-to-first; }
+    Mod+ISO_Level5_Shift+End  { move-column-to-last; }
+
+    Mod+ISO_Level5_Shift+U { move-column-to-workspace-down; }
+    Mod+ISO_Level5_Shift+I { move-column-to-workspace-up; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+ISO_Level5_Shift+P { toggle-window-floating; }
+    
+    Mod+ISO_Level5_Shift+Shift+U { move-workspace-down; }
+    Mod+ISO_Level5_Shift+Shift+I { move-workspace-up; }
+
+    // Monitor
+    Mod+Shift+H { focus-monitor-left; }
+    Mod+Shift+J { focus-monitor-down; }
+    Mod+Shift+K { focus-monitor-up; }
+    Mod+Shift+L { focus-monitor-right; }
+
+    Mod+Shift+ISO_Level5_Shift+H { move-column-to-monitor-left; }
+    Mod+Shift+ISO_Level5_Shift+J { move-column-to-monitor-down; }
+    Mod+Shift+ISO_Level5_Shift+K { move-column-to-monitor-up; }
+    Mod+Shift+ISO_Level5_Shift+L { move-column-to-monitor-right; }
+
+    Mod+Shift+Ctrl+H { move-workspace-to-monitor-left; }
+    Mod+Shift+Ctrl+J { move-workspace-to-monitor-down; }
+    Mod+Shift+Ctrl+K { move-workspace-to-monitor-up; }
+    Mod+Shift+Ctrl+L { move-workspace-to-monitor-right; }
+
+    // Size
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    Mod+Shift+E { quit; }
+}
