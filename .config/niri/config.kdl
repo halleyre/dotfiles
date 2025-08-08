@@ -16,6 +16,12 @@ layout {
     center-focused-column "on-overflow"
 }
 
+spawn-at-startup "xwayland-satellite"
+
+environment {
+    DISPLAY ":0"
+}
+
 binds {
     Mod+Space { spawn "yofi"; }
     Mod+T { spawn "kitty"; }
