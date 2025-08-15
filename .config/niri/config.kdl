@@ -38,6 +38,9 @@ binds {
 
     Mod+Q { close-window; }
 
+    Mod+Tab { toggle-overview; }
+    Mod+V { toggle-column-tabbed-display; }
+
     // Focus
     Mod+C { center-column; }
 
