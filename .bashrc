@@ -1,6 +1,7 @@
 export EDITOR=hx
 
 alias hgit='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias nrebuild='sudo nixos-rebuild --flake ~/.config/nixos#$(hostname)'
 
 eval "$(starship init bash)"
 
