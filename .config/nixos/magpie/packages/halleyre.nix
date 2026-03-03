@@ -16,6 +16,8 @@
         makeDesktopItem (defaults // { exec = "obsidian --ozone-platform=wayland %u"; });
     })
 
+    signal-desktop
+
   # dev
     radare2
     vscode
