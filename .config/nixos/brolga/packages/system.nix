@@ -10,9 +10,13 @@
     yazi   # file explorer
     zoxide # smart cd
 
-    git   # version control
     helix # text editor
 
     wget
   ];
+
+  programs = {
+    git.enable = true;
+    git.lfs.enable = true;
+  };
 }

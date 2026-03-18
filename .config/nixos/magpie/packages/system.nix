@@ -24,8 +24,11 @@
     cloudflared # tunnel
   ];
 
-  programs.git.enable = true;
-  programs.git.lfs.enable = true;
-  programs.niri.enable = true;
-  programs.waybar.enable = true;
+
+  programs = {
+    git.enable = true;
+    git.lfs.enable = true;
+    niri.enable = true;
+    waybar.enable = true;
+  };
 }
