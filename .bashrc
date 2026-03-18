@@ -10,6 +10,8 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 
 eval "$(zoxide init bash)"
 
+alias n="nix-shell"
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
