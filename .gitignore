@@ -6,4 +6,5 @@ shed
 
 .ssh
 .local
+!.local/bin
 .bash_history
