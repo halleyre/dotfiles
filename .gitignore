@@ -5,6 +5,15 @@ desk
 shed
 
 .ssh
+.pki
 .local
+.cache
 !.local/bin
 .bash_history
+.nix-channels
+.nix-defexpr
+.android
+.cargo
+.npm
+.vscode-server
+.vscode-remote-containers
