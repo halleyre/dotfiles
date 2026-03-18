@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ $EUID -ne 0 ]]; then
+   echo "Relaunching with sudo..."
+   exec sudo -E "${BASH_SOURCE[0]}" "$@"
+fi
+
+sudo nixos-rebuild --flake ~/.config/nixos#$(hostname) "$@"
