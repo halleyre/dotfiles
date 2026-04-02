@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+$EDITOR $(git status --porcelain | grep '[^MA]' | cut -c 4-)

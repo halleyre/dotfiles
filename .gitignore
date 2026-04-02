@@ -6,9 +6,9 @@ shed
 
 .ssh
 .pki
-.local
-.cache
+.local/*
 !.local/bin
+.cache
 .bash_history
 .nix-channels
 .nix-defexpr
