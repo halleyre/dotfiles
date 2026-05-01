@@ -12,7 +12,7 @@
             "photos.jamesstow.dev" = "http://localhost:2283"; # immich
             "music.jamesstow.dev" = "http://localhost:4533"; # navidrome
             "music-draft.jamesstow.dev" = "http://localhost:5030"; # soulseek
-            "notes.jamesstow.dev" = "http://localhost:12783"; # trilium
+            # "notes.jamesstow.dev" = "http://localhost:12783"; # trilium
           };
           default = "http_status:404";
         };
@@ -38,10 +38,10 @@
       settings.shares.directories = [ ];
       settings.slskd.openFirewall = true;
     };
-    trilium-server = {
-      enable = true;
-      port = 12783;
-    };
+    # trilium-server = {
+    #   enable = true;
+    #   port = 12783;
+    # };
   };
 
   users.users.navidrome.extraGroups = [ "slskd" ];

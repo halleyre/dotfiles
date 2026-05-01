@@ -16,6 +16,7 @@
   ];
 
   programs = {
+    screen.enable = true;
     git.enable = true;
     git.lfs.enable = true;
   };
