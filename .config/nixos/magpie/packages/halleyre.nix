@@ -3,6 +3,7 @@
 {
   users.users.halleyre.packages =  with pkgs; [
     bitwarden-cli
+    pavucontrol
 
     # browsers
     (chromium.override {
