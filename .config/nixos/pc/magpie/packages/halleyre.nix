@@ -1,27 +1,21 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./browsers/browsers.nix
+  ];
   users.users.halleyre.packages =  with pkgs; [
+  # utilities
     bitwarden-cli
     pavucontrol
 
-    # browsers
-    (chromium.override {
-      commandLineArgs = "--ozone-platform=wayland";
-    })              # main
-    tor-browser     # onion routing
-    mullvad-browser # fingerprint prevention
-
-    (obsidian.override {
-      makeDesktopItem = defaults@{ exec, ... }:
-        makeDesktopItem (defaults // { exec = "obsidian --ozone-platform=wayland %u"; });
-    })
-
+  # apps
+    libresprite
+    logseq
     signal-desktop
 
-  # dev
+  # terminal apps
     radare2
-    vscode
 
   # language servers
     clang-tools
@@ -34,9 +28,6 @@
     nautilus # gtk filechooser （＾～＾）work out termchooser later
     (catppuccin-gtk.override { variant = "mocha"; }) # gnome theme
 
-  # apps
-    libresprite
-
   # virtualisation / emulation
     spice
     spice-gtk
@@ -44,8 +35,13 @@
     virt-viewer
   ];
 
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
+  programs = {
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+      extraCompatPackages = [
+        pkgs.proton-ge-bin
+      ];
+    };
   };
 }
