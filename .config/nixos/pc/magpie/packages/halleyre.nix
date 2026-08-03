@@ -11,11 +11,11 @@
 
   # apps
     libresprite
-    logseq
     signal-desktop
 
   # terminal apps
     radare2
+    gitui
 
   # language servers
     clang-tools
