@@ -12,6 +12,7 @@
   # apps
     libresprite
     signal-desktop
+    obsidian
 
   # terminal apps
     radare2
