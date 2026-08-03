@@ -23,9 +23,12 @@
     efi.canTouchEfiVariables = true;
   };
 
+  security.rtkit.enable = true; # only for audio atm
+
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   hardware.steam-hardware.enable = true;
+  hardware.xpadneo.enable = true;
 
   networking = {
     hostName = "magpie";

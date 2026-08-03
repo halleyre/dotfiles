@@ -5,4 +5,7 @@ if [[ $EUID -ne 0 ]]; then
    exec sudo -E "${BASH_SOURCE[0]}" "$@"
 fi
 
-sudo nixos-rebuild --flake ~/.config/nixos#$(hostname) "$@"
+SYSTEM_TYPE=$1
+shift
+
+sudo nixos-rebuild --flake ~/.config/nixos/"$SYSTEM_TYPE"#$(hostname) "$@"
